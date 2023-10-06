@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Register</title>
+    <link rel="stylesheet" href="styles/styles.css">
+
+<script>
+        window.onload = function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var loginError = urlParams.get('login_error');
+            if (loginError) {
+                alert("Incorrect username or password!");
+            }
+        };
+    </script>
+</head>
+<body>
+			<div class=dashboard-container>
+    <form id="loginForm" action="login.php" method="post">
+        <h2>Login</h2>
+        <label for="loginUsername">Username:</label>
+        <input type="text" id="loginUsername" name="loginUsername" required>
+
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="loginPassword" required>
+
+        <button type="submit">Login</button>
+        <br><br><br>
+        <button type="button" onclick="toggleRegisterForm()">Register New Account</button>
+    </form>
+
+    <form id="registerForm" action="register.php" method="post">
+        <h2>Register</h2>
+        <label for="registerUsername">Username:</label>
+        <input type="text" id="registerUsername" name="registerUsername" required>
+
+        <label for="registerPassword">Password:</label>
+        <input type="password" id="registerPassword" name="registerPassword" required>
+
+<label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        <button type="submit">Register</button>
+<br><br><br>
+<button type="button" onclick="toggleLoginForm()">Already have an Account</button>
+								
+    </form>
+</div>
+
+    <script src="scripts/scripts.js"></script>
+
+</body>
+</html>
